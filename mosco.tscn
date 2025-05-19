@@ -1,0 +1,92 @@
+[gd_scene load_steps=14 format=3 uid="uid://ct2f5ni4w3asa"]
+
+[ext_resource type="Script" uid="uid://bamvuh7fp5a2f" path="res://script/mosco.gd" id="1_0aam5"]
+[ext_resource type="Texture2D" uid="uid://hupxve8ldwvy" path="res://img/Mosquito/moscoDown1.png" id="1_rmo42"]
+[ext_resource type="Texture2D" uid="uid://dgtv1lpnxbhum" path="res://img/Mosquito/moscoDown2.png" id="2_0aam5"]
+[ext_resource type="Texture2D" uid="uid://bmod7bqmd5uyq" path="res://img/Mosquito/moscoDown3.png" id="3_018ot"]
+[ext_resource type="Texture2D" uid="uid://84dmpjdgns2i" path="res://img/Mosquito/moscoIzquierda1.png" id="4_i4hyb"]
+[ext_resource type="Texture2D" uid="uid://yhyj43e2an8o" path="res://img/Mosquito/moscoIzquierda2.png" id="5_5ni53"]
+[ext_resource type="Texture2D" uid="uid://cesxqovo0n10" path="res://img/Mosquito/moscoDerecha1.png" id="6_428c1"]
+[ext_resource type="Texture2D" uid="uid://bt5gw3cvkwhsl" path="res://img/Mosquito/moscoDerecha2.png" id="7_n233a"]
+[ext_resource type="Texture2D" uid="uid://bhxabq0kgvtj3" path="res://img/Mosquito/moscoUp1.png" id="8_hj8th"]
+[ext_resource type="Texture2D" uid="uid://bhijjkdst2d2f" path="res://img/Mosquito/moscoUp2.png" id="9_0rodr"]
+[ext_resource type="Texture2D" uid="uid://bx51501wlil5m" path="res://img/Mosquito/moscoUp3.png" id="10_hxfy8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_760el"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rmo42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0aam5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_018ot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0aam5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_rmo42")
+}],
+"loop": true,
+"name": &"moscoDown",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_i4hyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5ni53")
+}],
+"loop": true,
+"name": &"moscoLeft",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_428c1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_n233a")
+}],
+"loop": true,
+"name": &"moscoRight",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_hj8th")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0rodr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hxfy8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0rodr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hj8th")
+}],
+"loop": true,
+"name": &"moscoUp",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ppjlr"]
+radius = 19.0263
+
+[node name="Mosco" type="Area2D" groups=["moscos"]]
+script = ExtResource("1_0aam5")
+
+[node name="mosquito" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_760el")
+animation = &"moscoDown"
+
+[node name="CollisionMosco" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ppjlr")

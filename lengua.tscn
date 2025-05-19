@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://o5id4cvrpa1m"]
+
+[ext_resource type="Script" uid="uid://ci05obqqeggne" path="res://script/lengua.gd" id="1_5v47g"]
+[ext_resource type="Texture2D" uid="uid://bpbbcbtjkqnb5" path="res://img/rana/lengua.png" id="1_u2r5c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5v47g"]
+size = Vector2(11, 11)
+
+[node name="Lengua" type="Area2D"]
+script = ExtResource("1_5v47g")
+
+[node name="SpriteLengua" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_u2r5c")
+centered = false
+offset = Vector2(0, -20)
+
+[node name="CollisionLengua" type="CollisionShape2D" parent="."]
+position = Vector2(27.5, 0.5)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_5v47g")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

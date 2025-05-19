@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://ct8xfdtux0do6"]
+
+[ext_resource type="Script" uid="uid://dy8scwu4i8whi" path="res://script/hud.gd" id="1_37p78"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_37p78")
+
+[node name="LabelTiempoRestante" type="Label" parent="."]
+offset_left = 354.0
+offset_top = 5.0
+offset_right = 475.0
+offset_bottom = 33.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.0161544, 0.726367, 0.644455, 1)
+theme_override_font_sizes/font_size = 20
+text = "Tiempo: 30 s"
+
+[node name="LabelMosquitosAtrapados" type="Label" parent="."]
+offset_left = 3.0
+offset_top = 5.0
+offset_right = 264.0
+offset_bottom = 33.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.0568604, 0.554962, 0.432986, 1)
+theme_override_font_sizes/font_size = 20
+text = "Atrapados: 9999"

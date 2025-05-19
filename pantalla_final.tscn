@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://dld6dva0lpi30"]
+
+[ext_resource type="Script" uid="uid://cktvn5k6323ot" path="res://script/pantalla_final.gd" id="1_5f37g"]
+[ext_resource type="Texture2D" uid="uid://dudko8wrugjjk" path="res://img/fondos/ganar.png" id="1_kaswv"]
+[ext_resource type="Texture2D" uid="uid://cn54qpbva60r6" path="res://img/fondos/perder.png" id="2_5f37g"]
+
+[node name="PantallaFinal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5f37g")
+
+[node name="ganar" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 720.0
+texture = ExtResource("1_kaswv")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="perder" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 720.0
+texture = ExtResource("2_5f37g")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="ButtonReiniciar" type="Button" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = 78.0
+offset_top = 65.0
+offset_right = 183.0
+offset_bottom = 101.0
+text = "REINICIAR"
+
+[node name="ButtonSalir" type="Button" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = 205.0
+offset_top = 66.0
+offset_right = 310.0
+offset_bottom = 102.0
+text = "SALIR"
+
+[connection signal="pressed" from="ButtonReiniciar" to="." method="_on_button_reiniciar_pressed"]
+[connection signal="pressed" from="ButtonSalir" to="." method="_on_button_salir_pressed"]

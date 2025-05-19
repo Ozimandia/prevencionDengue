@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://d200yod1swuch"]
+
+[ext_resource type="Texture2D" uid="uid://d4cwklvj425ub" path="res://img/fondos/inicio.png" id="1_5n8uk"]
+[ext_resource type="Script" uid="uid://cdgq1mfmunj3" path="res://script/inicio_ui.gd" id="1_n14d2"]
+
+[node name="inicioUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n14d2")
+
+[node name="FondoInicio" type="Sprite2D" parent="."]
+position = Vector2(240, 360)
+scale = Vector2(0.240843, 0.24)
+texture = ExtResource("1_5n8uk")
+
+[node name="ButtonIniciar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 340.0
+offset_right = 276.0
+offset_bottom = 371.0
+text = "INICIAR"
+
+[connection signal="pressed" from="ButtonIniciar" to="." method="_on_button_iniciar_pressed"]

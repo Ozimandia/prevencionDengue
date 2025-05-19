@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://cy8q211j3pln5"]
+
+[ext_resource type="Script" uid="uid://bugi6eoxty6yg" path="res://script/personaje.gd" id="1_gj0cs"]
+[ext_resource type="Texture2D" uid="uid://c8cgwgljaupqq" path="res://img/rana/psj2.png" id="2_ck3sb"]
+[ext_resource type="Texture2D" uid="uid://c7525j0spwgke" path="res://img/rana/psj1.png" id="3_cx4ix"]
+[ext_resource type="PackedScene" uid="uid://o5id4cvrpa1m" path="res://lengua.tscn" id="4_gj0cs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1y5k2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ck3sb")
+}],
+"loop": true,
+"name": &"AbrirBoca",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cx4ix")
+}],
+"loop": true,
+"name": &"CerrarBoca",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f8plh"]
+height = 52.8916
+
+[node name="Personaje" type="Area2D"]
+script = ExtResource("1_gj0cs")
+
+[node name="Rana" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_1y5k2")
+animation = &"AbrirBoca"
+
+[node name="CollisionRana" type="CollisionShape2D" parent="."]
+rotation = 1.63286
+shape = SubResource("CapsuleShape2D_f8plh")
+
+[node name="Lengua" parent="." instance=ExtResource("4_gj0cs")]
